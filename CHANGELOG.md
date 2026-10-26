@@ -1,5 +1,19 @@
 # Changelog
 
+## Unreleased
+
+- Add `swe-inbox`, an optional second plugin in the marketplace (`/plugin install swe-inbox@swe`).
+  It is a Claude Code mod. Agents file each question for the human principal with its `ask` tool,
+  which gives the item its W-number. The principal answers in a pane beside the chat (`/inbox`), and
+  the answer reaches the session that asked as a prompt. A typed `W7: B` answers the item too. An
+  approval is answered only in the session that raised it, by a prompt the principal sends. Items
+  are kept in `.swe/inbox/` under the main working tree, shared by every worktree. No core rule
+  changes.
+- `/inbox terminal` opens the same inbox in a terminal window of its own (`tui/inbox.py`, Python
+  standard library only); an approval cannot be given there.
+- A note in the inbox can have several lines. The pane's note field is three rows tall. In the
+  inbox terminal, Ctrl+J or Alt+Enter starts a new line, and a paste keeps its lines.
+
 ## 0.2.0 — 2026-10-21
 
 Quick-start review fixes, 2026-10-21:
